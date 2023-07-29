@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backroundwithlogo"
+    tools:context=".MainActivity$JobVacancies">
+
+    <TextView
+        android:id="@+id/textWelcom4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Job Vacancies"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Refresh to see Available Job"
+        app:layout_constraintTop_toBottomOf="@+id/textWelcom4"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+    <TextView
+        android:id="@+id/tvtxt1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Jobs available"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/refresh"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tvtxt2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Jobs available"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvtxt1"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/applyNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Apply Now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtxt2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

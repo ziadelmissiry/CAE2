@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".ssignUp"
+    android:layout_height="match_parent"
+    android:background="@drawable/backroundforappgreen">
+
+
+    <TextView
+        android:id="@+id/textWelcom2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Create an Acount"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="532dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="input name:"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="410dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:hint="name"
+                android:inputType="textPersonName"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="input location"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <Spinner
+                android:id="@+id/locationSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/locationSpinner2txt"
+                android:layout_height="wrap_content"
+                android:text="input specific location"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <Spinner
+                android:id="@+id/locationSpinner2"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="input Job"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <Spinner
+                android:id="@+id/jobfieldSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="input university"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <EditText
+                android:id="@+id/inputuniversty"
+                android:layout_width="410dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:hint="name of uni"
+                android:inputType="textPersonName"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Which of the following banking products have you worked with or have knowledge about?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question1"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How would you rate your proficiency in using banking software and technology?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question2"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="When handling customer inquiries, how do you ensure clear communication and understanding?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question3"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How do you stay updated on changes in banking regulations and compliance requirements?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question4"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In a customer-facing role, how do you handle challenging situations to maintain a positive customer experience?"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/question5"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What steps do you take to ensure the accuracy and integrity of financial data and transactions?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question6"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How do you prioritize tasks and manage time effectively in a fast-paced banking environment?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question7"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="When faced with a complex problem, what approach do you take to find a solution?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question8"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How do you handle confidential information and sensitive data in your role?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question9"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In your opinion, what is the most critical factor for a bank's success in retaining customers and gaining new ones?"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <Spinner
+                android:id="@+id/question10"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationSpinner" />
+
+
+            <TextView
+                android:id="@+id/disabilitytxtv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="input disablity"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/disabilitySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/jobfieldSpinner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/progressseek"
+                android:layout_height="match_parent"
+                android:text="My disablity affects my work at a rate of"
+                android:textSize="18sp"
+                android:textColor="@color/white"/>
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekbar"
+                />
+
+
+
+            <EditText
+                android:id="@+id/email_create"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_background"
+                android:hint="email"
+                android:inputType="textEmailAddress"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/password_create"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_background"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_create" />
+
+            <Button
+                android:id="@+id/acc_sign_up_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_background"
+                android:layout_gravity="center"
+                android:text="Sign up Now"
+                app:layout_constraintTop_toBottomOf="@id/password_create" />
+
+            <TextView
+                android:id="@+id/create_acc_BTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_background"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_gravity="center"
+                android:text="Sign in"
+                android:textSize="27dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/wheelchair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="5dp"
+
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/baseline_accessible_24" />
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:checked="false"
+                    android:minWidth="30dp"
+                    android:minHeight="40dp"
+                    android:padding="20dp" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

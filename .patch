@@ -1,0 +1,215 @@
+Index: app/src/main/java/com/example/cae2/ssignUp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cae2/ssignUp.java b/app/src/main/java/com/example/cae2/ssignUp.java
+--- a/app/src/main/java/com/example/cae2/ssignUp.java	
++++ b/app/src/main/java/com/example/cae2/ssignUp.java	(date 1689939054819)
+@@ -6,11 +6,12 @@
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.text.TextUtils;
+-import android.util.Log;
+ import android.view.View;
++import android.widget.ArrayAdapter;
+ import android.widget.Button;
+ import android.widget.EditText;
+-import android.widget.ProgressBar;
++import android.widget.Spinner;
++import android.widget.Switch;
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
+@@ -21,21 +22,17 @@
+ import com.google.firebase.auth.AuthResult;
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.auth.FirebaseUser;
+-import com.google.firebase.database.DataSnapshot;
+-import com.google.firebase.database.DatabaseError;
+-import com.google.firebase.database.DatabaseReference;
+-import com.google.firebase.database.FirebaseDatabase;
+-import com.google.firebase.database.ValueEventListener;
+ import com.google.firebase.firestore.CollectionReference;
+ import com.google.firebase.firestore.DocumentReference;
+ import com.google.firebase.firestore.DocumentSnapshot;
+ import com.google.firebase.firestore.FirebaseFirestore;
+-import com.google.firebase.firestore.core.UserData;
+ 
+ import java.util.HashMap;
+ import java.util.Map;
+ import java.util.Objects;
+ 
++import utl.BankiUsers;
++
+ public class ssignUp extends AppCompatActivity {
+ 
+ 
+@@ -46,11 +43,20 @@
+     TextView createBTN;
+     Button loginBTN;
+ 
++    Spinner jobField, location, disability;
++
++
++    Switch disablitySwitch;
++
++
++
+     //fireBase Authentication
+     private FirebaseAuth firebaseAuth;
+     private FirebaseAuth.AuthStateListener authStateListener;
+     private FirebaseUser currentUser;
+ 
++
++
+     // Firebase Connection
+     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+     private CollectionReference collectionReference = db.collection("Users");
+@@ -60,6 +66,10 @@
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_ssign_up);
++
++
++
++
+         //firebase auth
+         firebaseAuth = FirebaseAuth.getInstance();
+ 
+@@ -70,6 +80,57 @@
+         email_create = findViewById(R.id.email_create);
+         password_create =findViewById(R.id.password_create);
+         name_create = findViewById(R.id.name);
++        disablitySwitch = findViewById(R.id.switch1);
++
++
++        // Initialize Spinners
++        jobField = findViewById(R.id.JobField_spinner);
++        location = findViewById(R.id.locationSpinner);
++        disability = findViewById(R.id.diablitySpinner);
++
++        // Data for Spinners
++        String[] jobs = {"Alexandria", "Assuit", "Aswan"};
++        String[] locationOptions = {"bancassurance", "capital market business institutions", "communication and CSR"};
++        String[] disabilityOptions = {"non", "Blindness", "Deafness", "Mobility Impairment", "Intellectual Disability", "Autism Spectrum Disorder", "Speech Impairment", "Dyslexia", "Attention Deficit Hyperactivity Disorder (ADHD)", "Cerebral Palsy", "Multiple Sclerosis (MS)", "Muscular Dystrophy", "Down Syndrome", "Post-Traumatic Stress Disorder (PTSD)", "Bipolar Disorder", "Schizophrenia", "Chronic Pain", "Epilepsy", "Amputation", "Visual Impairment", "Hearing Impairment"};
++
++        // Create ArrayAdapter for each Spinner
++        ArrayAdapter<String> jobAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, jobs);
++        ArrayAdapter<String> locationAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, locationOptions);
++        ArrayAdapter<String> disabilityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, disabilityOptions);
++
++        // Specify the layout style for the drop-down views
++        jobAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        locationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        disabilityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++
++        // Set the adapters for the Spinners
++        jobField.setAdapter(jobAdapter);
++        location.setAdapter(locationAdapter);
++        disability.setAdapter(disabilityAdapter);
++
++ //if statment for diablities
++
++
++        disablitySwitch.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                if (disablitySwitch.isChecked()){
++                    disability.setVisibility(View.VISIBLE);
++                }else {
++                    disability.setVisibility(View.GONE);
++                }
++            }
++        });
++
++
++
++
++
++
++
++
++
++
+ 
+         //Fire Auth require Goolgle Accout
+ 
+@@ -96,11 +157,19 @@
+                 if (!TextUtils.isEmpty(email_create.getText().toString())
+                 && !TextUtils.isEmpty(password_create.getText().toString())){
+ 
++
+                     String email = email_create.getText().toString().trim();
+                     String name_c = name_create.getText().toString().trim();
+                     String password = password_create.getText().toString();
++                    String jobs = jobField.getSelectedItem().toString();
++                String loactions = location.getSelectedItem().toString();
++                  String disablitys = disability.getSelectedItem().toString();
++
++
++                  CreateUserEmailAccount(email, password, name_c, jobs, loactions, disablitys);
++
+ 
+-                    CreateUserEmailAccount(email, password, name_c);
++
+                 }else {
+                     Toast.makeText(ssignUp.this, "empty Fields",
+                             Toast.LENGTH_SHORT).show();
+@@ -115,15 +184,18 @@
+ 
+     } // on create
+ 
+-    private void CreateUserEmailAccount(String email, String password) {
+-        if (!TextUtils.isEmpty(email_create.getText().toString())
+-                && !TextUtils.isEmpty(password_create.getText().toString())){
++    private void CreateUserEmailAccount(String email, String password, String name_c, String jobs, String loactions, String disablitys) {
++        if (!TextUtils.isEmpty(email)
++                && !TextUtils.isEmpty(password)){
+ 
+             firebaseAuth.createUserWithEmailAndPassword(email,password)
+                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                         @Override
+                         public void onComplete(@NonNull Task<AuthResult> task) {
+                             if (task.isSuccessful()){
++
++
++
+                                 // we take user to next activity main activity
+                                 currentUser =firebaseAuth.getCurrentUser();
+                                 assert currentUser != null;
+@@ -134,7 +206,10 @@
+                                 Map<String, String> userObj = new HashMap<>();
+                                 userObj.put("userId", currentUserID);
+                                 userObj.put("email", email);
+-                                userObj.put("name", name_create);
++                                userObj.put("name", name_c);
++                                userObj.put("job", jobs);
++                               userObj.put("diablity", disablitys);
++                                userObj.put("location", loactions);
+ 
+ 
+                                 //Adding Users to FireStore
+@@ -150,6 +225,12 @@
+                                                                 if(Objects.requireNonNull(task.getResult()).exists()){
+                                                                     String name = task.getResult().getString("email");
+ 
++                                                                    BankiUsers bankiUsers = BankiUsers.getInstance();
++                                                                    bankiUsers.setUserId(currentUserID);
++                                                                    bankiUsers.setEmail(name);
++
++
++
+                                                                     // if the user is registered successfully,
+                                                                     //then move to main activity
+ 
+@@ -158,7 +239,8 @@
+                                                                     i.putExtra("UserId", currentUserID);
+                                                                     startActivity(i);
+ 
+-                                                                    Toast.makeText(ssignUp.this, "Sign up click log in", Toast.LENGTH_SHORT).show();
++
++
+ 
+                                                                 }else {}
+                                                             }

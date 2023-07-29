@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "457844261188",
+    "project_id": "cae2-abe32",
+    "storage_bucket": "cae2-abe32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457844261188:android:7eff3c8cb64ce217cdd711",
+        "android_client_info": {
+          "package_name": "com.example.cae2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457844261188-0b6801jkfok29b0ev06br09acdlo6u1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtL1AgyuX6Cnte6_WbiMyxTGSeVus2zI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457844261188-0b6801jkfok29b0ev06br09acdlo6u1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
