@@ -7,7 +7,7 @@
 ## Upload Pdf
 <img width="278" alt="image" src="https://github.com/user-attachments/assets/1956740a-8974-433b-b9c2-020848071d13" />
 
-## Sign in Page
+## Profile Page
 <img width="245" alt="image" src="https://github.com/user-attachments/assets/1698bfaa-ab79-4e79-9241-391c8775ffb9" />
 
 ## Sign in Page
