@@ -10,7 +10,7 @@
 ## Profile Page
 <img width="245" alt="image" src="https://github.com/user-attachments/assets/1698bfaa-ab79-4e79-9241-391c8775ffb9" />
 
-## Sign in Page
+## Job vacancies Page
 <img width="239" alt="image" src="https://github.com/user-attachments/assets/fbb78e1f-4142-4ffe-971e-ee9e82c98fc0" />
 
 
